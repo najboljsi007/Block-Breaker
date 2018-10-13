@@ -1776,6 +1776,11 @@ Prefab:
       propertyPath: m_Name
       value: Block (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 114092595158913694, guid: 72b0665244ba84146a84902d3e2cae11,
+        type: 2}
+      propertyPath: maxHits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72b0665244ba84146a84902d3e2cae11, type: 2}
   m_IsPrefabAsset: 0
