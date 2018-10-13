@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Block : MonoBehaviour {
     [SerializeField] AudioClip breakSound;
+    [SerializeField] GameObject blockSparkleVFX;
 
     // cache level
     Level level;
@@ -24,9 +25,21 @@ public class Block : MonoBehaviour {
 
     private void DestroyBlock()
     {
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+        PlayDestroySFX();
         Destroy(gameObject);
         gameStatus.AddToScore();
         level.BlockDestroyed();
+        TriggerSparkleVFX();
+    }
+
+    private void PlayDestroySFX()
+    {
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+    }
+
+    private void TriggerSparkleVFX()
+    {
+        GameObject sparkles = Instantiate(blockSparkleVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 1f);
     }
 }
