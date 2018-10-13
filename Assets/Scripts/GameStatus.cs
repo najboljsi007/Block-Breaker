@@ -12,16 +12,27 @@ public class GameStatus : MonoBehaviour {
     // state of the game
     [SerializeField] int currentScore = 0;
 
-    private void Start()
-    {
+    private void Awake() {
+        int gameObjectsCount = FindObjectsOfType<GameStatus>().Length;
+        if (gameObjectsCount > 1)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    private void Start() {
         scoreText.text = currentScore.ToString();
     }
-    // Update is called once per frame
+
     void Update () {
         Time.timeScale = gameSpeed;
 	}
 
-    public void AddToScore(){
+    public void AddToScore() {
         currentScore += pointsPerBlockDestroyed;
         scoreText.text = currentScore.ToString();
     }
