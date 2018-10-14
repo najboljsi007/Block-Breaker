@@ -80,8 +80,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   breakSound: {fileID: 8300000, guid: f892019dc64c642d097bdba904ee44a6, type: 3}
   blockSparkleVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 2}
-  maxHits: 0
-  hitSprites: []
+  maxHits: 2
+  hitSprites:
+  - {fileID: 21300000, guid: acad08c3d9b52f94298afc08d925b867, type: 3}
   timesHit: 0
 --- !u!212 &212599098177970592
 SpriteRenderer:
